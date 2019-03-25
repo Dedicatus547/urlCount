@@ -12,8 +12,8 @@
 #include <vector>
 #include <queue>
 using namespace std;
-const unsigned mod = 17;
-const int topk = 3;
+const unsigned mod = 1009;
+const int topk = 100;
 
 string numToStr(size_t num) {
     string ret;
@@ -94,19 +94,9 @@ vector<pair<string, size_t>> getTopK() {
 
 
 int main(int argc, const char * argv[]) {
-    ofstream fout("testData");
-    for (int i = 0; i < 30; ++i)
-        fout << 1347 << endl;
-    for (int i = 0; i < 20; ++i)
-        fout << 124 << endl;
-    for (int i = 0; i < 10; ++i)
-        fout << 21 << endl;
-    for (int i = 0; i < 1000; ++i)
-        fout << i*17+13 << endl;
-    cutDoc("testData");
+    cutDoc("./100.txt");
     auto ans = getTopK();
-    fout.close();
-    fout.open("Answer");
+    ofstream fout("./Answer");
     for (auto& a : ans) {
         fout << a.first << " " << a.second << endl;
     }
